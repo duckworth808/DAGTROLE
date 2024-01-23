@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        #question {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        #noButton {
+            cursor: pointer;
+        }
+
+        #yesButton {
+            cursor: pointer;
+        }
+
+        #hiddenImage {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: none;
+            z-index: 999;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="question">Yle xar tu xo?</div>
+    <button id="noButton" onclick="moveNo()">No</button>
+    <button id="yesButton" onclick="showImage()">Yes</button>
+
+    <img id="hiddenImage" src="https://www.shutterstock.com/shutterstock/photos/564985714/display_1500/stock-vector-emoticon-laughing-and-wiping-tears-away-while-pointing-at-something-or-someone-with-his-other-hand-564985714.jpg" alt="Laughing emoticon">
+
+    <script>
+        function moveNo() {
+            var noButton = document.getElementById("noButton");
+            noButton.style.position = "absolute";
+            var x = event.clientX;
+            var y = event.clientY;
+            noButton.style.left = x + 50 + "px";
+            noButton.style.top = y + 50 + "px";
+        }
+
+        function showImage() {
+            var hiddenImage = document.getElementById("hiddenImage");
+            hiddenImage.style.display = "block";
+        }
+    </script>
+
+</body>
+</html>
